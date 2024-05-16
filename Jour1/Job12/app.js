@@ -4,8 +4,8 @@ const path = require('path');
 
 // Créer le serveur
 const server = http.createServer((req, res) => {
-    // Lire le contenu du fichier index.html
-    const filePath = path.join(__dirname, 'index.html');
+    // Lire le contenu du fichier index.js
+    const filePath = path.join(__dirname, 'index.js');
     fs.readFile(filePath, (err, data) => {
         if (err) {
             res.writeHead(500, {'Content-Type': 'text/plain'});

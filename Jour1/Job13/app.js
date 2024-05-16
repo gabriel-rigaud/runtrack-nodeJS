@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
     // Vérifier l'URL et renvoyer le fichier correspondant
     let fileName = '';
     if (url === '/') {
-        fileName = 'index.html';
+        fileName = 'index.js';
     } else if (url === '/about') {
         fileName = 'about.html';
     } else {

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Todolist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .completed {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+<h1>Ma Todolist</h1>
+<ul id="taskList">
+    <!-- Les tâches seront ajoutées ici dynamiquement par JavaScript -->
+</ul>
+
+<!-- Formulaire pour ajouter une nouvelle tâche -->
+<form id="taskForm">
+    <input type="text" id="taskInput" placeholder="Ajouter une nouvelle tâche...">
+    <button type="submit">Ajouter</button>
+</form>
+
+<script>
+    // Script JavaScript pour gérer l'ajout de tâches et la mise à jour de la liste
+    document.addEventListener('DOMContentLoaded', function () {
+        const taskList = document.getElementById('taskList');
+        const taskForm = document.getElementById('taskForm');
+        const taskInput = document.getElementById('taskInput');
+
+        // Fonction pour ajouter une nouvelle tâche à la liste
+        function addTask(title, completed) {
+            const li = document.createElement('li');
+            if (completed) {
+                li.classList.add('completed');
+            }
+            li.textContent = title;
+            taskList.appendChild(li);
+        }
+
+        // Écouter la soumission du formulaire pour ajouter une nouvelle tâche
+        taskForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const title = taskInput.value.trim();
+            if (title !== '') {
+                addTask(title, false); // Ajouter une tâche non terminée
+                taskInput.value = ''; // Effacer le champ de saisie
+            }
+        });
+
+        // Exemple de chargement initial de la liste de tâches (à remplacer par des données dynamiques)
+        // Ce code peut être supprimé ou modifié selon la façon dont vous récupérez vos données
+        addTask('Faire les courses', false);
+        addTask('Réviser pour l\'examen', false);
+        addTask('Faire du sport', true); // Exemple de tâche terminée
+    });
+</script>
+</body>
+</html>

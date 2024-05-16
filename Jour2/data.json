@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Faire les courses",
+      "description": "Acheter des fruits, du pain et du lait",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Réviser pour l'examen",
+      "description": "Passer en revue les chapitres 3 à 5",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Faire du sport",
+      "description": "Aller à la salle de sport et faire du jogging",
+      "completed": true
+    }
+  ]
+}
